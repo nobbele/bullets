@@ -1,6 +1,7 @@
 use std::{collections::VecDeque, rc::Rc};
 
 use ggez::{
+    glam,
     graphics::{
         self,
         // BlendMode, Canvas,
@@ -13,7 +14,6 @@ use ggez::{
     mint::Point2,
     Context, GameError, GameResult,
 };
-use glam;
 
 use lang_compiler::BulletCode;
 use lang_component::{

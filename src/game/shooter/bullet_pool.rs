@@ -1,6 +1,6 @@
 use std::{cell::RefCell, collections::VecDeque, ops::DerefMut, rc::Rc};
 
-use ggez::{graphics, Context, GameError, GameResult};
+use ggez::{glam, graphics, Context, GameError, GameResult};
 
 use lang_compiler::BulletCode;
 use lang_component::{

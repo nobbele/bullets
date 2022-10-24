@@ -1,5 +1,6 @@
 use ggez::{
     event::EventHandler,
+    glam,
     graphics::{
         self,
         // BlendMode, Canvas,
@@ -11,7 +12,6 @@ use ggez::{
     input::keyboard::{KeyCode, KeyInput, KeyMods},
     Context, GameResult,
 };
-use glam;
 
 mod bullet;
 mod bullet_codes;
@@ -91,10 +91,7 @@ impl EventHandler for ShooterScene {
     }
 
     fn draw(&mut self, ctx: &mut Context) -> GameResult<()> {
-        let mut canvas = graphics::Canvas::from_frame(
-            ctx,
-            graphics::CanvasLoadOp::Clear([0.0, 0.1, 0.1, 1.0].into()),
-        );
+        let mut canvas = graphics::Canvas::from_frame(ctx, Color::from([0.0, 0.1, 0.1, 1.0]));
 
         static BG_RECT: Rect = Rect::new(0.0, 0.0, constant::WIDTH, constant::HEIGHT);
         static BG_COLOR: Color = Color::new(0.0, 0.1, 0.1, 1.0);
